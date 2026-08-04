@@ -1,0 +1,34 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; padding: 0; overflow-x: hidden; }
+img { max-width: 100%; }
+a, button { -webkit-tap-highlight-color: transparent; }
+
+/* Animations */
+@keyframes spin    { to { transform: rotate(360deg); } }
+@keyframes pulse   { 0%,100%{opacity:1} 50%{opacity:.4} }
+@keyframes fadeIn  { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+/* Mobile nav safe area */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  #merch-bottom { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* FU animation utility */
+.fu { animation: fadeIn .35s ease both; }
+.d1 { animation-delay: .05s; }
+.d2 { animation-delay: .10s; }
+.d3 { animation-delay: .15s; }
+.d4 { animation-delay: .20s; }
+.d5 { animation-delay: .25s; }
+
+/* Desktop sidebar */
+@media (min-width: 768px) {
+  #merch-desk   { display: block !important; }
+  #merch-header button:first-child { display: none !important; }
+  #merch-bottom { display: none !important; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,.12); border-radius: 99px; }
